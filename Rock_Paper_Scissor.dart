@@ -12,10 +12,25 @@ void main(){
                 playerMove=Move.rock;
              }
             else if(input=='p'){
-                playerMove==Move.paper;
+                playerMove=Move.paper;
             }
             else if(input=='s'){
-                playerMove==Move.scissor;
+                playerMove=Move.scissor;
+            }
+             final random = rng.nextInt(3);
+            final aiMove = Move.values[random];
+            print('Your Move: $playerMove');
+            print('AI\'s  Move: $aiMove ');
+            if(playerMove==aiMove){
+              print('It\'s a Draw');
+            }
+            else if(playerMove==Move.rock && aiMove==Move.scissor ||
+                    playerMove==Move.scissor && aiMove== Move.paper ||
+                    playerMove==Move.paper && aiMove== Move.rock ){
+                      print('You Win');
+                    }
+            else{
+              print('You Lose');
             }
         }
         else if(input == 'q'){
