@@ -3,7 +3,7 @@ import 'dart:io';
 import 'dart:math';
 enum Move {rock, paper , scissor}
 void main(){
-    final rng = Random();
+    final r = Random();
     while(true){
         stdout.write('Rock , Paper or Scissor ? (r,p,s) Press q to terminate: ');
         final input = stdin.readLineSync();
@@ -18,7 +18,7 @@ void main(){
             else if(input=='s'){
                 playerMove=Move.scissor;
             }
-             final random = rng.nextInt(3);
+             final random = r.nextInt(3);
             final aiMove = Move.values[random];
             print('Your Move: $playerMove');
             print('AI\'s  Move: $aiMove ');
